@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -e
 
 create_log_dir() {
@@ -31,8 +32,6 @@ elif [[ ${1} == squid3 || ${1} == $(which squid3) ]]; then
   EXTRA_ARGS="${@:2}"
   set --
 fi
-
-consul agent --join consul --config-dir /etc/consul.d --data-dir /data &
 
 # default behaviour is to launch squid
 if [[ -z ${1} ]]; then
